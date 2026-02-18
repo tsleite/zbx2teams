@@ -14,7 +14,7 @@
 
 <br>
 
-![Demo animado dos cards](assets/demo-animated.svg)
+![Demonstração real dos cards no Teams](assets/cards_real_teams.gif)
 
 <br>
 
@@ -30,7 +30,7 @@
 - [Pré-requisitos](#-pré-requisitos)
 - [Instalação](#-instalação)
 - [Configuração no Zabbix](#-configuração-no-zabbix)
-- [Configurar Webhook no Teams](#-configurar-webhook-no-teams)
+- [Configurar Webhook via Workflows no Teams](#-configurar-webhook-via-workflows-no-teams)
 - [Menções opcional](#-menções-opcional)
 - [Testes](#-testes)
 - [Estrutura do Card](#-estrutura-do-card)
@@ -63,6 +63,8 @@ O diferencial é simples: cada card chega no Teams com a **cor de fundo idêntic
 
 ## 🖼 Preview dos Cards
 
+![Demonstração real dos cards no Microsoft Teams](assets/cards_real_teams.gif)
+
 ![Preview de todos os cards por severidade](assets/cards-preview.svg)
 
 ---
@@ -93,7 +95,7 @@ O diferencial é simples: cada card chega no Teams com a **cor de fundo idêntic
 | Zabbix Server / Proxy | 6.x ou superior (testado no **7 LTS**) |
 | bash | 4.x+ |
 | curl | qualquer versão recente |
-| Microsoft Teams | Canal com **Incoming Webhook** ativo |
+| Microsoft Teams | Canal com **Workflow** configurado (Power Automate) |
 
 ---
 
@@ -235,12 +237,12 @@ Message:
 | Campo | Valor |
 |---|---|
 | Type | `Microsoft Teams` |
-| Send to | URL do Incoming Webhook do Teams |
+| Send to | URL do Webhook gerado pelo Workflow no Teams |
 | When active | `1-7,00:00-24:00` |
 | Use if severity | Severidades desejadas |
 | Status | `Enabled` |
 
-> O campo **Send to** é passado como `$1` ao script. A URL do webhook fica aqui, não no script.
+> O campo **Send to** é passado como `$1` ao script. A URL do webhook gerado pelo Workflow fica aqui, não no script.
 
 ---
 
@@ -264,15 +266,29 @@ Na aba **Operations**, repita para os 3 blocos (Operations / Recovery / Update):
 
 ---
 
-## 🔗 Configurar Webhook no Teams
+## 🔗 Configurar Webhook via Workflows no Teams
+
+> O **Incoming Webhook** (conector legado do Office 365) foi descontinuado pela Microsoft.
+> O método atual e suportado é via **Workflows** (Power Automate), disponível diretamente no Teams.
+
+### Passos para criar o Workflow
 
 1. Acesse o canal desejado no Teams
-2. Clique `···` → **Conectores** (ou **Gerenciar canal** → Conectores)
-3. Pesquise **Incoming Webhook** → **Configurar**
-4. Dê um nome (ex: `Zabbix`) e um ícone opcional
-5. Clique **Criar** e copie a URL gerada
+2. Clique em `···` ao lado do nome do canal → selecione **Workflows**
+3. Na barra de busca, procure por:
+   ```
+   Post to a channel when a webhook request is received
+   ```
+4. Selecione o template e clique em **Next**
+5. Dê um nome ao workflow (ex: `Zabbix Alerts`) e clique em **Next**
+6. Selecione o **Team** e o **Canal** de destino
+7. Clique em **Add workflow**
+8. Copie a **URL do webhook** gerada (formato `https://prod-XX.westus.logic.azure.com/...`)
 
 Use essa URL no campo **Send to** do usuário no Zabbix.
+
+> A URL é longa e única por workflow — guarde-a com segurança.
+> Caso perca a URL, é necessário recriar o workflow.
 
 ---
 
@@ -387,7 +403,7 @@ sudo -u zabbix bash /usr/lib/zabbix/alertscripts/zabbix_teams.sh \
 
 ### Banner sem cor / fundo branco
 
-Requer **Adaptive Card v1.5** e webhook do tipo **Incoming Webhook** — não o conector legado do Office 365.
+Requer **Adaptive Card v1.5** e webhook gerado via **Workflows** (Power Automate) — o conector legado do Office 365 (Incoming Webhook) foi descontinuado pela Microsoft e não suporta Adaptive Cards com banner colorido.
 
 ### Menção não notifica o usuário
 
@@ -415,7 +431,7 @@ zbx2teams/
 ├── zabbix_teams.sh          # Script principal
 ├── test_zabbix_teams.sh     # Suite de testes
 ├── assets/
-│   ├── demo-animated.svg    # Preview animado dos cards
+│   ├── cards_real_teams.gif # Demonstração real dos cards no Teams
 │   ├── cards-preview.svg    # Preview estático de todas as severidades
 │   └── severity-colors.svg  # Paleta de cores
 └── README.md
