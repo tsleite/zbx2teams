@@ -63,8 +63,6 @@ O diferencial é simples: cada card chega no Teams com a **cor de fundo idêntic
 
 ## 🖼 Preview dos Cards
 
-![Demonstração real dos cards no Microsoft Teams](assets/cards_real_teams.gif)
-
 ![Preview de todos os cards por severidade](assets/cards-preview.svg)
 
 ---
