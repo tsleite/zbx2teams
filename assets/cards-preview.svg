@@ -1,0 +1,163 @@
+<svg width="780" height="460" viewBox="0 0 780 460" xmlns="http://www.w3.org/2000/svg" font-family="'Segoe UI', system-ui, sans-serif">
+  <defs>
+    <filter id="card-shadow">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#00000040"/>
+    </filter>
+    <filter id="sm-shadow">
+      <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#00000030"/>
+    </filter>
+  </defs>
+
+  <!-- Dark background -->
+  <rect width="780" height="460" fill="#1a1a2e"/>
+
+  <!-- Grid lines subtle -->
+  <line x1="0" y1="230" x2="780" y2="230" stroke="#ffffff08" stroke-width="1"/>
+  <line x1="390" y1="0" x2="390" y2="460" stroke="#ffffff08" stroke-width="1"/>
+
+  <!-- Label top -->
+  <text x="390" y="22" text-anchor="middle" fill="#666688" font-size="11" letter-spacing="3" font-weight="600">ADAPTIVE CARDS  ·  MICROSOFT TEAMS</text>
+
+  <!-- ========== CARD 1 — DISASTER ========== -->
+  <g filter="url(#card-shadow)" transform="translate(30, 34)">
+    <rect width="160" height="180" rx="10" fill="#2d2d44"/>
+    <!-- Banner -->
+    <rect width="160" height="44" rx="10" fill="#7B0C0C"/>
+    <rect y="34" width="160" height="10" fill="#7B0C0C"/>
+    <text x="80" y="27" text-anchor="middle" fill="white" font-size="13" font-weight="700">💥  PROBLEMA</text>
+    <!-- Facts -->
+    <text x="12" y="66" fill="#9999bb" font-size="8" font-weight="600">🔔 Alarme:</text>
+    <text x="12" y="78" fill="#ddddee" font-size="8">Host inacessível</text>
+    <text x="12" y="94" fill="#9999bb" font-size="8" font-weight="600">🎯 Severidade:</text>
+    <text x="12" y="106" fill="#ddddee" font-size="8">Disaster</text>
+    <text x="12" y="122" fill="#9999bb" font-size="8" font-weight="600">🖥️ Host:</text>
+    <text x="12" y="134" fill="#ddddee" font-size="8">srv-db-master</text>
+    <text x="12" y="150" fill="#9999bb" font-size="8" font-weight="600">⏰ Início:</text>
+    <text x="12" y="162" fill="#ddddee" font-size="8">2025-02-17 09:42:00</text>
+    <!-- Footer -->
+    <text x="80" y="177" text-anchor="middle" fill="#666688" font-size="7">Observabilidade</text>
+  </g>
+
+  <!-- ========== CARD 2 — HIGH ========== -->
+  <g filter="url(#card-shadow)" transform="translate(205, 34)">
+    <rect width="160" height="180" rx="10" fill="#2d2d44"/>
+    <rect width="160" height="44" rx="10" fill="#C0392B"/>
+    <rect y="34" width="160" height="10" fill="#C0392B"/>
+    <text x="80" y="27" text-anchor="middle" fill="white" font-size="13" font-weight="700">🔴  PROBLEMA</text>
+    <text x="12" y="66" fill="#9999bb" font-size="8" font-weight="600">🔔 Alarme:</text>
+    <text x="12" y="78" fill="#ddddee" font-size="8">CPU acima de 90%</text>
+    <text x="12" y="94" fill="#9999bb" font-size="8" font-weight="600">🎯 Severidade:</text>
+    <text x="12" y="106" fill="#ddddee" font-size="8">High</text>
+    <text x="12" y="122" fill="#9999bb" font-size="8" font-weight="600">🖥️ Host:</text>
+    <text x="12" y="134" fill="#ddddee" font-size="8">srv-prod-01</text>
+    <text x="12" y="150" fill="#9999bb" font-size="8" font-weight="600">📊 Último valor:</text>
+    <text x="12" y="162" fill="#ddddee" font-size="8">94.3%</text>
+    <text x="80" y="177" text-anchor="middle" fill="#666688" font-size="7">Observabilidade</text>
+  </g>
+
+  <!-- ========== CARD 3 — AVERAGE ========== -->
+  <g filter="url(#card-shadow)" transform="translate(380, 34)">
+    <rect width="160" height="180" rx="10" fill="#2d2d44"/>
+    <rect width="160" height="44" rx="10" fill="#D45E00"/>
+    <rect y="34" width="160" height="10" fill="#D45E00"/>
+    <text x="80" y="27" text-anchor="middle" fill="#1a1a2e" font-size="13" font-weight="700">🟠  PROBLEMA</text>
+    <text x="12" y="66" fill="#9999bb" font-size="8" font-weight="600">🔔 Alarme:</text>
+    <text x="12" y="78" fill="#ddddee" font-size="8">Memória acima de 85%</text>
+    <text x="12" y="94" fill="#9999bb" font-size="8" font-weight="600">🎯 Severidade:</text>
+    <text x="12" y="106" fill="#ddddee" font-size="8">Average</text>
+    <text x="12" y="122" fill="#9999bb" font-size="8" font-weight="600">🖥️ Host:</text>
+    <text x="12" y="134" fill="#ddddee" font-size="8">srv-app-01</text>
+    <text x="12" y="150" fill="#9999bb" font-size="8" font-weight="600">📊 Último valor:</text>
+    <text x="12" y="162" fill="#ddddee" font-size="8">87.1%</text>
+    <text x="80" y="177" text-anchor="middle" fill="#666688" font-size="7">Observabilidade</text>
+  </g>
+
+  <!-- ========== CARD 4 — WARNING ========== -->
+  <g filter="url(#card-shadow)" transform="translate(555, 34)">
+    <rect width="160" height="180" rx="10" fill="#2d2d44"/>
+    <rect width="160" height="44" rx="10" fill="#E6A800"/>
+    <rect y="34" width="160" height="10" fill="#E6A800"/>
+    <text x="80" y="27" text-anchor="middle" fill="#1a1a2e" font-size="13" font-weight="700">⚠️  PROBLEMA</text>
+    <text x="12" y="66" fill="#9999bb" font-size="8" font-weight="600">🔔 Alarme:</text>
+    <text x="12" y="78" fill="#ddddee" font-size="8">Disco uso acima 75%</text>
+    <text x="12" y="94" fill="#9999bb" font-size="8" font-weight="600">🎯 Severidade:</text>
+    <text x="12" y="106" fill="#ddddee" font-size="8">Warning</text>
+    <text x="12" y="122" fill="#9999bb" font-size="8" font-weight="600">🖥️ Host:</text>
+    <text x="12" y="134" fill="#ddddee" font-size="8">srv-files-01</text>
+    <text x="12" y="150" fill="#9999bb" font-size="8" font-weight="600">📊 Último valor:</text>
+    <text x="12" y="162" fill="#ddddee" font-size="8">78.9%</text>
+    <text x="80" y="177" text-anchor="middle" fill="#666688" font-size="7">Observabilidade</text>
+  </g>
+
+  <!-- ========== CARD 5 — RESOLVED ========== -->
+  <g filter="url(#card-shadow)" transform="translate(30, 244)">
+    <rect width="160" height="190" rx="10" fill="#2d2d44"/>
+    <rect width="160" height="44" rx="10" fill="#449626"/>
+    <rect y="34" width="160" height="10" fill="#449626"/>
+    <text x="80" y="27" text-anchor="middle" fill="white" font-size="13" font-weight="700">✅  RESOLVIDO</text>
+    <text x="12" y="66" fill="#9999bb" font-size="8" font-weight="600">🔔 Alarme:</text>
+    <text x="12" y="78" fill="#ddddee" font-size="8">CPU acima de 90%</text>
+    <text x="12" y="94" fill="#9999bb" font-size="8" font-weight="600">⏰ Início:</text>
+    <text x="12" y="106" fill="#ddddee" font-size="8">2025-02-17 09:42</text>
+    <text x="12" y="122" fill="#9999bb" font-size="8" font-weight="600">✅ Fim:</text>
+    <text x="12" y="134" fill="#ddddee" font-size="8">2025-02-17 09:57</text>
+    <text x="12" y="150" fill="#9999bb" font-size="8" font-weight="600">⏳ Duração:</text>
+    <text x="12" y="162" fill="#ddddee" font-size="8">15m 00s</text>
+    <text x="12" y="178" fill="#9999bb" font-size="8" font-weight="600">📊 Último valor:</text>
+    <text x="80" y="187" text-anchor="middle" fill="#666688" font-size="7">Observabilidade</text>
+  </g>
+
+  <!-- ========== CARD 6 — UPDATE ========== -->
+  <g filter="url(#card-shadow)" transform="translate(205, 244)">
+    <rect width="160" height="190" rx="10" fill="#2d2d44"/>
+    <rect width="160" height="44" rx="10" fill="#1F98FF"/>
+    <rect y="34" width="160" height="10" fill="#1F98FF"/>
+    <text x="80" y="27" text-anchor="middle" fill="white" font-size="13" font-weight="700">🔄  ATUALIZAÇÃO</text>
+    <text x="12" y="66" fill="#9999bb" font-size="8" font-weight="600">🔔 Alarme:</text>
+    <text x="12" y="78" fill="#ddddee" font-size="8">CPU acima de 90%</text>
+    <text x="12" y="94" fill="#9999bb" font-size="8" font-weight="600">✅ Reconhecido:</text>
+    <text x="12" y="106" fill="#ddddee" font-size="8">Sim</text>
+    <text x="12" y="122" fill="#9999bb" font-size="8" font-weight="600">💬 Mensagem:</text>
+    <text x="12" y="134" fill="#ddddee" font-size="8">Equipe notificada.</text>
+    <text x="12" y="150" fill="#9999bb" font-size="8" font-weight="600">🙋 Usuário:</text>
+    <text x="12" y="162" fill="#ddddee" font-size="8">admin</text>
+    <text x="80" y="187" text-anchor="middle" fill="#666688" font-size="7">Observabilidade</text>
+  </g>
+
+  <!-- ========== CARD 7 — INFORMATION ========== -->
+  <g filter="url(#card-shadow)" transform="translate(380, 244)">
+    <rect width="160" height="190" rx="10" fill="#2d2d44"/>
+    <rect width="160" height="44" rx="10" fill="#7499FF"/>
+    <rect y="34" width="160" height="10" fill="#7499FF"/>
+    <text x="80" y="27" text-anchor="middle" fill="white" font-size="13" font-weight="700">ℹ️  PROBLEMA</text>
+    <text x="12" y="66" fill="#9999bb" font-size="8" font-weight="600">🔔 Alarme:</text>
+    <text x="12" y="78" fill="#ddddee" font-size="8">Backup com avisos</text>
+    <text x="12" y="94" fill="#9999bb" font-size="8" font-weight="600">🎯 Severidade:</text>
+    <text x="12" y="106" fill="#ddddee" font-size="8">Information</text>
+    <text x="12" y="122" fill="#9999bb" font-size="8" font-weight="600">🖥️ Host:</text>
+    <text x="12" y="134" fill="#ddddee" font-size="8">srv-backup-01</text>
+    <text x="12" y="150" fill="#9999bb" font-size="8" font-weight="600">⏰ Início:</text>
+    <text x="12" y="162" fill="#ddddee" font-size="8">2025-02-17 03:00</text>
+    <text x="80" y="187" text-anchor="middle" fill="#666688" font-size="7">Observabilidade</text>
+  </g>
+
+  <!-- ========== CARD 8 — NOT CLASSIFIED ========== -->
+  <g filter="url(#card-shadow)" transform="translate(555, 244)">
+    <rect width="160" height="190" rx="10" fill="#2d2d44"/>
+    <rect width="160" height="44" rx="10" fill="#97AAB3"/>
+    <rect y="34" width="160" height="10" fill="#97AAB3"/>
+    <text x="80" y="27" text-anchor="middle" fill="white" font-size="13" font-weight="700">⬜  PROBLEMA</text>
+    <text x="12" y="66" fill="#9999bb" font-size="8" font-weight="600">🔔 Alarme:</text>
+    <text x="12" y="78" fill="#ddddee" font-size="8">Erros de CRC</text>
+    <text x="12" y="94" fill="#9999bb" font-size="8" font-weight="600">🎯 Severidade:</text>
+    <text x="12" y="106" fill="#ddddee" font-size="8">Not classified</text>
+    <text x="12" y="122" fill="#9999bb" font-size="8" font-weight="600">🖥️ Host:</text>
+    <text x="12" y="134" fill="#ddddee" font-size="8">sw-core-01</text>
+    <text x="12" y="150" fill="#9999bb" font-size="8" font-weight="600">⏰ Início:</text>
+    <text x="12" y="162" fill="#ddddee" font-size="8">2025-02-17 11:15</text>
+    <text x="80" y="187" text-anchor="middle" fill="#666688" font-size="7">Observabilidade</text>
+  </g>
+
+  <!-- Bottom label -->
+  <text x="390" y="450" text-anchor="middle" fill="#444466" font-size="10" letter-spacing="2">zbx2teams  ·  github.com/tsleite/zbx2teams</text>
+</svg>

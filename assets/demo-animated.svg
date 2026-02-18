@@ -1,0 +1,148 @@
+<svg width="420" height="300" viewBox="0 0 420 300" xmlns="http://www.w3.org/2000/svg" font-family="'Segoe UI', system-ui, sans-serif">
+  <defs>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="card-s">
+      <feDropShadow dx="0" dy="4" stdDeviation="10" flood-color="#00000060"/>
+    </filter>
+    <!-- Animation: cycle through all cards every 10s total -->
+    <style>
+      .card { animation: fadeCard 10s infinite; opacity: 0; }
+      .c1   { animation-delay: 0s;    background: #7B0C0C; }
+      .c2   { animation-delay: 1.6s; }
+      .c3   { animation-delay: 3.2s; }
+      .c4   { animation-delay: 4.8s; }
+      .c5   { animation-delay: 6.4s; }
+      .c6   { animation-delay: 8.0s; }
+      @keyframes fadeCard {
+        0%   { opacity: 0; transform: translateY(12px); }
+        8%   { opacity: 1; transform: translateY(0); }
+        58%  { opacity: 1; transform: translateY(0); }
+        75%  { opacity: 0; transform: translateY(-6px); }
+        100% { opacity: 0; }
+      }
+      .dot { animation: pulseDot 1.2s ease-in-out infinite alternate; }
+      @keyframes pulseDot {
+        from { opacity: 0.3; r: 4; }
+        to   { opacity: 1;   r: 6; }
+      }
+    </style>
+  </defs>
+
+  <!-- Background -->
+  <rect width="420" height="300" fill="#1a1a2e"/>
+
+  <!-- Teams UI chrome -->
+  <rect x="14" y="14" width="392" height="272" rx="12" fill="#252540" filter="url(#card-s)"/>
+
+  <!-- Teams top bar -->
+  <rect x="14" y="14" width="392" height="40" rx="12" fill="#2d2d55"/>
+  <rect x="14" y="40" width="392" height="14" fill="#2d2d55"/>
+  <circle cx="38" cy="34" r="10" fill="#444466"/>
+  <text x="38" y="38" text-anchor="middle" font-size="10">🔔</text>
+  <text x="58" y="31" fill="#aaaacc" font-size="11" font-weight="700">Zabbix Alerts</text>
+  <text x="58" y="45" fill="#666688" font-size="9"># alertas-producao</text>
+
+  <!-- Pulsing status dot -->
+  <circle cx="392" cy="24" r="5" fill="#449626" class="dot"/>
+
+  <!-- ===== ANIMATED CARDS ===== -->
+
+  <!-- Card: Disaster -->
+  <g class="card c1" style="animation-delay:0s">
+    <rect x="30" y="68" width="360" height="110" rx="8" fill="#252540"/>
+    <rect x="30" y="68" width="360" height="36" rx="8" fill="#7B0C0C"/>
+    <rect x="30" y="90" width="360" height="14" fill="#7B0C0C"/>
+    <text x="210" y="91" text-anchor="middle" fill="white" font-size="13" font-weight="700">💥  PROBLEMA</text>
+    <text x="46" y="122" fill="#8888aa" font-size="9" font-weight="600">🔔 Alarme:</text>
+    <text x="120" y="122" fill="#ddddee" font-size="9">Host inacessível — ICMP timeout</text>
+    <text x="46" y="138" fill="#8888aa" font-size="9" font-weight="600">🖥️ Host:</text>
+    <text x="120" y="138" fill="#ddddee" font-size="9">srv-db-master (192.168.10.42)</text>
+    <text x="46" y="154" fill="#8888aa" font-size="9" font-weight="600">🎯 Severidade:</text>
+    <text x="120" y="154" fill="#ddddee" font-size="9">Disaster</text>
+    <text x="210" y="172" text-anchor="middle" fill="#444466" font-size="8">Observabilidade</text>
+    <rect x="46" y="178" width="100" height="0.5" fill="#333355"/>
+  </g>
+
+  <!-- Card: High -->
+  <g class="card" style="animation-delay:1.6s">
+    <rect x="30" y="68" width="360" height="110" rx="8" fill="#252540"/>
+    <rect x="30" y="68" width="360" height="36" rx="8" fill="#C0392B"/>
+    <rect x="30" y="90" width="360" height="14" fill="#C0392B"/>
+    <text x="210" y="91" text-anchor="middle" fill="white" font-size="13" font-weight="700">🔴  PROBLEMA</text>
+    <text x="46" y="122" fill="#8888aa" font-size="9" font-weight="600">🔔 Alarme:</text>
+    <text x="120" y="122" fill="#ddddee" font-size="9">CPU acima de 90%</text>
+    <text x="46" y="138" fill="#8888aa" font-size="9" font-weight="600">🖥️ Host:</text>
+    <text x="120" y="138" fill="#ddddee" font-size="9">srv-prod-01 (192.168.10.15)</text>
+    <text x="46" y="154" fill="#8888aa" font-size="9" font-weight="600">📊 Último valor:</text>
+    <text x="120" y="154" fill="#ddddee" font-size="9">94.3%</text>
+    <text x="210" y="172" text-anchor="middle" fill="#444466" font-size="8">Observabilidade</text>
+  </g>
+
+  <!-- Card: Average -->
+  <g class="card" style="animation-delay:3.2s">
+    <rect x="30" y="68" width="360" height="110" rx="8" fill="#252540"/>
+    <rect x="30" y="68" width="360" height="36" rx="8" fill="#D45E00"/>
+    <rect x="30" y="90" width="360" height="14" fill="#D45E00"/>
+    <text x="210" y="91" text-anchor="middle" fill="#1a1a2e" font-size="13" font-weight="700">🟠  PROBLEMA</text>
+    <text x="46" y="122" fill="#8888aa" font-size="9" font-weight="600">🔔 Alarme:</text>
+    <text x="120" y="122" fill="#ddddee" font-size="9">Memória acima de 85%</text>
+    <text x="46" y="138" fill="#8888aa" font-size="9" font-weight="600">🖥️ Host:</text>
+    <text x="120" y="138" fill="#ddddee" font-size="9">srv-app-01 (192.168.10.22)</text>
+    <text x="46" y="154" fill="#8888aa" font-size="9" font-weight="600">📊 Último valor:</text>
+    <text x="120" y="154" fill="#ddddee" font-size="9">87.1%</text>
+    <text x="210" y="172" text-anchor="middle" fill="#444466" font-size="8">Observabilidade</text>
+  </g>
+
+  <!-- Card: Warning -->
+  <g class="card" style="animation-delay:4.8s">
+    <rect x="30" y="68" width="360" height="110" rx="8" fill="#252540"/>
+    <rect x="30" y="68" width="360" height="36" rx="8" fill="#E6A800"/>
+    <rect x="30" y="90" width="360" height="14" fill="#E6A800"/>
+    <text x="210" y="91" text-anchor="middle" fill="#1a1a2e" font-size="13" font-weight="700">⚠️  PROBLEMA</text>
+    <text x="46" y="122" fill="#8888aa" font-size="9" font-weight="600">🔔 Alarme:</text>
+    <text x="120" y="122" fill="#ddddee" font-size="9">Disco com uso acima de 75%</text>
+    <text x="46" y="138" fill="#8888aa" font-size="9" font-weight="600">🖥️ Host:</text>
+    <text x="120" y="138" fill="#ddddee" font-size="9">srv-files-01 (192.168.10.30)</text>
+    <text x="46" y="154" fill="#8888aa" font-size="9" font-weight="600">📊 Último valor:</text>
+    <text x="120" y="154" fill="#ddddee" font-size="9">78.9%</text>
+    <text x="210" y="172" text-anchor="middle" fill="#444466" font-size="8">Observabilidade</text>
+  </g>
+
+  <!-- Card: Resolved -->
+  <g class="card" style="animation-delay:6.4s">
+    <rect x="30" y="68" width="360" height="110" rx="8" fill="#252540"/>
+    <rect x="30" y="68" width="360" height="36" rx="8" fill="#449626"/>
+    <rect x="30" y="90" width="360" height="14" fill="#449626"/>
+    <text x="210" y="91" text-anchor="middle" fill="white" font-size="13" font-weight="700">✅  RESOLVIDO</text>
+    <text x="46" y="122" fill="#8888aa" font-size="9" font-weight="600">🔔 Alarme:</text>
+    <text x="120" y="122" fill="#ddddee" font-size="9">CPU acima de 90%</text>
+    <text x="46" y="138" fill="#8888aa" font-size="9" font-weight="600">⏳ Duração:</text>
+    <text x="120" y="138" fill="#ddddee" font-size="9">15m 00s</text>
+    <text x="46" y="154" fill="#8888aa" font-size="9" font-weight="600">📊 Último valor:</text>
+    <text x="120" y="154" fill="#ddddee" font-size="9">32.1%</text>
+    <text x="210" y="172" text-anchor="middle" fill="#444466" font-size="8">Observabilidade</text>
+  </g>
+
+  <!-- Card: Update -->
+  <g class="card" style="animation-delay:8.0s">
+    <rect x="30" y="68" width="360" height="110" rx="8" fill="#252540"/>
+    <rect x="30" y="68" width="360" height="36" rx="8" fill="#1F98FF"/>
+    <rect x="30" y="90" width="360" height="14" fill="#1F98FF"/>
+    <text x="210" y="91" text-anchor="middle" fill="white" font-size="13" font-weight="700">🔄  ATUALIZAÇÃO</text>
+    <text x="46" y="122" fill="#8888aa" font-size="9" font-weight="600">✅ Reconhecido:</text>
+    <text x="130" y="122" fill="#ddddee" font-size="9">Sim — admin</text>
+    <text x="46" y="138" fill="#8888aa" font-size="9" font-weight="600">💬 Mensagem:</text>
+    <text x="120" y="138" fill="#ddddee" font-size="9">Equipe notificada.</text>
+    <text x="46" y="154" fill="#8888aa" font-size="9" font-weight="600">🖥️ Host:</text>
+    <text x="120" y="154" fill="#ddddee" font-size="9">srv-prod-01</text>
+    <text x="210" y="172" text-anchor="middle" fill="#444466" font-size="8">Observabilidade</text>
+  </g>
+
+  <!-- Bottom bar -->
+  <rect x="14" y="258" width="392" height="28" rx="12" fill="#2d2d55"/>
+  <rect x="14" y="258" width="392" height="14" fill="#2d2d55"/>
+  <text x="210" y="277" text-anchor="middle" fill="#555577" font-size="9" letter-spacing="2">zbx2teams · github.com/tsleite/zbx2teams</text>
+</svg>
